@@ -6,33 +6,38 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 @Entity
 public class LoanDetails {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Min(999)@Max(99999)
 	private int customerId;
+	@Min(1000) @Max(1000000000)
 	private double loanAmount;
 	private LocalDate tradeDate;
 	private LocalDate loanStartDate;
 	private int termOfLoanInMonths;
-	private String paymentTerm;
+	@Enumerated(EnumType.STRING)
+	private PaymentTerm paymentTerm;
 	private LocalDate  maturityDate;
 	private int paymentFrequency;
-	private double intrestRate;
+	@Min(1) 
+	@Max(99)
+	private double interestRate;
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "paymentId",referencedColumnName = "customerId")
 	public List<PaymentSchedule> paymentSchedules = new ArrayList<>();
-//	private PaymentSchedule paymentSchedule;
-	
 	
 	public LoanDetails(int customerId, double loanAmount, LocalDate tradeDate, LocalDate loanStartDate,
-				int termOfLoanInMonths, String paymentTerm, LocalDate maturityDate, int paymentFrequency, double intrestRate,
+				int termOfLoanInMonths, PaymentTerm paymentTerm, LocalDate maturityDate, int paymentFrequency, double interestRate,
 				List<PaymentSchedule> paymentSchedules) {
 			super();
 			this.customerId = customerId;
@@ -43,22 +48,15 @@ public class LoanDetails {
 			this.paymentTerm = paymentTerm;
 			this.maturityDate = maturityDate;
 			this.paymentFrequency = paymentFrequency;
-			this.intrestRate = intrestRate;
+			this.interestRate = interestRate;
 			this.paymentSchedules = paymentSchedules;
 		}
 
-	//	public PaymentSchedule getPaymentSchedule() {
-//		return paymentSchedule;
-//	}
-//
-//	public void setPaymentSchedule(PaymentSchedule paymentSchedule) {
-//		this.paymentSchedule = paymentSchedule;
-//	}
-	public String getPaymentTerm() {
+	public PaymentTerm getPaymentTerm() {
 		return paymentTerm;
 	}
 
-	public void setPaymentTerm(String paymentTerm) {
+	public void setPaymentTerm(PaymentTerm paymentTerm) {
 		this.paymentTerm = paymentTerm;
 	}
 
@@ -133,14 +131,14 @@ public class LoanDetails {
 
 
 
-	public double getIntrestRate() {
-		return intrestRate;
+	public double getInterestRate() {
+		return interestRate;
 	}
 
 
 
-	public void setIntrestRate(double intrestRate) {
-		this.intrestRate = intrestRate;
+	public void setInterestRate(double interestRate) {
+		this.interestRate = interestRate;
 	}
 
 	@Override
@@ -148,10 +146,8 @@ public class LoanDetails {
 		return "LoanDetails [customerId=" + customerId + ", loanAmount=" + loanAmount + ", tradeDate=" + tradeDate
 				+ ", loanStartDate=" + loanStartDate + ", termOfLoanInMonths=" + termOfLoanInMonths + ", paymentTerm="
 				+ paymentTerm + ", maturityDate=" + maturityDate + ", paymentFrequency=" + paymentFrequency
-				+ ", intrestRate=" + intrestRate + ", paymentSchedules=" + paymentSchedules + "]";
+				+ ", intrestRate=" + interestRate + ", paymentSchedules=" + paymentSchedules + "]";
 	}
-	
-	
 	
 	
 	

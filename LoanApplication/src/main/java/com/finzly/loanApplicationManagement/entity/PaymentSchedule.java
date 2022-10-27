@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,14 +14,15 @@ public class PaymentSchedule {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	private Long id;
+	private Integer id;
 	private LocalDate paymentDate;
 	private double principal;
 	private double projectedInterest;
-	private String paymentStatus="projected";
+	@Enumerated(EnumType.STRING)
+	private Status paymentStatus = Status.Projected;
 	private double paymentAmount;
 	
-	public PaymentSchedule(LocalDate paymentDate, double principal, double projectedInterest, String paymentStatus,
+	public PaymentSchedule(LocalDate paymentDate, double principal, double projectedInterest, Status paymentStatus,
 			double paymentAmount) {
 		super();
 		this.paymentDate = paymentDate;
@@ -30,7 +33,6 @@ public class PaymentSchedule {
 	}
 	public PaymentSchedule() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public LocalDate getPaymentDate() {
 		return paymentDate;
@@ -50,10 +52,10 @@ public class PaymentSchedule {
 	public void setProjectedInterest(double projectedInterest) {
 		this.projectedInterest = projectedInterest;
 	}
-	public String getPaymentStatus() {
+	public Status getPaymentStatus() {
 		return paymentStatus;
 	}
-	public void setPaymentStatus(String paymentStatus) {
+	public void setPaymentStatus(Status paymentStatus) {
 		this.paymentStatus = paymentStatus;
 	}
 	public double getPaymentAmount() {
@@ -62,13 +64,19 @@ public class PaymentSchedule {
 	public void setPaymentAmount(double paymentAmount) {
 		this.paymentAmount = paymentAmount;
 	}
+	
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	@Override
 	public String toString() {
 		return "PaymentSchedule [paymentDate=" + paymentDate + ", principal=" + principal + ", projectedInterest="
 				+ projectedInterest + ", paymentStatus=" + paymentStatus + ", paymentAmount=" + paymentAmount + "]";
 	}
-	
-	
 	
 
 }
