@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WebServiceService } from '../service/web-service.service';
+import { Chart,registerables } from 'node_modules/chart.js';
 
 export class Schedule{
   constructor(
@@ -40,6 +41,51 @@ export class PaymentScheduleComponent implements OnInit {
       res => {
         console.log(res)
         this.schedules = res.paymentSchedules
+          Chart.register(...registerables)
+
+        let temp = Object.keys(this.schedules).map(e=>this.schedules[e].projectedInterest)
+        console.log(temp)
+    let temp2 = Object.keys(this.schedules).map(e=>this.schedules[e].principal)
+    let date = Object.keys(this.schedules).map(e=>this.schedules[e].paymentDate)
+   console.log(date)
+    
+   var myChart = new Chart('myChart',{
+    
+  
+    type:'line',
+    data: {
+      labels: date,
+      datasets:[
+        {
+          data: temp,
+          borderColor:'#3cba9f',
+          fill:false
+        },
+        {
+          data: temp2,
+          borderColor:'#ffcc00',
+          fill:false
+        },
+      ]
+    },
+    options:{
+      plugins: {
+        title: {
+            display: true,
+            text: 'PaymentDetails'
+        }
+    },
+      scales: {
+        x : {
+          display:true
+        },
+        y: {
+          display:true
+        }
+      }
+    }
+    
+   }) 
     }
      )
   }
