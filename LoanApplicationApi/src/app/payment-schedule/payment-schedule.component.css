@@ -74,3 +74,13 @@ img{
     top:50%;
     transform: translate(-50%,-50%) scale(1);
 }
+
+#divChart{
+    
+    display: block;
+    position: relative;
+    left: 30%;
+    width: 800px;
+    height: 800px;
+    margin-top: 200px;
+}
