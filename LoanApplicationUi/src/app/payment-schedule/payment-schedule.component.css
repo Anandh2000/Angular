@@ -1,3 +1,53 @@
+body{
+    display: grid;
+    grid-template-rows: 1.7fr 2fr;
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+    padding: 50px;
+    padding-left: 150px;
+}
+text{
+    color: white;
+}
+
+
+body > div{
+    height: 100%;
+    background-color: #0d0083;
+}
+
+.top,
+.bottom{
+    display: flex;
+    flex-direction: row;
+}
+
+.donut-graph{
+    display: flex;
+    flex: 0.6;
+    justify-content: start;
+    margin-bottom: 0px;
+}
+.line-graph{
+    display: flex;
+    flex: 0.6;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.payment-table{
+    display: flex;
+    flex:1;
+    margin-bottom: -150px;
+}
+
+
+
+ 
+
+
 
 button{
     border: none;
@@ -11,7 +61,7 @@ button:hover{
 
 .pagination{
     display: flex;
-    color: var(--text-color);
+    color: white;
 }
 
 section{
@@ -29,17 +79,8 @@ section{
     color: var(--text-color);
 }
 
-.table-responsive{
-    position: absolute;
-    top:100px;
-    width: fit-content;
-    left:270px;
-}
-.table{
-    background-color: var(--primary-color-light);
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
-    color: var(--text-color);
-}
+
+
 
 @media(max-width:1000px) {
     .pagination{
@@ -74,12 +115,13 @@ img{
     top:50%;
     transform: translate(-50%,-50%) scale(1);
 }
+
+
 #divChart{
-    
-    display: block;
-    position: relative;
-    left: 30%;
-    width: 800px;
-    height: 800px;
-    margin-top: 200px;
+    width: 600px;
+    height: 300px;
+}
+#divChart-donut{
+    width: 300px;
+    height: 300px;
 }

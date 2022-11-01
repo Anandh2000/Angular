@@ -1,5 +1,74 @@
-<app-side-menu-bar></app-side-menu-bar>
-<section>
+<body>
+  <div class="top">
+    <div style="flex: 0.7;" class="customer-info">
+    </div>
+    <div style="flex: 1;" class="line-graph">
+      <div id="divChart">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="payment-table">
+      <div class="table-responsive">
+        <table class="table" style="box-shadow: 5px 5px 10px rgba(0,0,0,0.15); color: aliceblue; font-size: large;">
+          <thead class="table-dark">
+              <tr>
+                  <th >Payment Id</th>
+                  <th >Payment Date</th>
+                  <th >Principal</th>
+                  <th >Projected Interest</th>
+                  <th >Payment Status</th>
+                  <th >Payment Amount</th>
+                  <th > Pay </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor ="let schedule of schedules | paginate:{
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count}; let i = index">
+                  <td>{{schedule.id}}</td>
+                  <td>{{schedule.paymentDate}}</td>
+                  <td>{{schedule.principal | currency:"INR" }}</td>
+                  <td>{{schedule.projectedInterest | currency:"INR" }}</td>
+                  <td>{{schedule.paymentStatus}}</td>
+                  <td>{{schedule.paymentAmount | currency:"INR" }}</td>
+                  <td><button class=" btn btn-primary" (click)="onConfirm()"
+                    [disabled]="!(schedule.paymentStatus === 'AwaitingPayment')">pay</button>
+                  </td>
+    
+                </tr>
+          </tbody>
+        </table>
+        <div class="pagination">
+          <div style="flex: 3;">
+            <pagination-controls
+            previousLabel="Prev"
+            nextLabel="Next"
+            (pageChange)="onTableDataChange($event)">
+          </pagination-controls>
+          </div>
+        </div>
+      </div> 
+      <div class="popup" id="ConfirmationPopup" >
+        <img src="../../assets/Hands - Phone.png">
+        <h2>Confirmation</h2>
+        <p>Click the confirm button to confirm</p>
+        <button type="submit" class = "btn btn-primary confirm" (click)="payment()" routerLinkActive="router-link-active">Confirm</button>
+        <button type="submit" style="margin-left: 20px;" class = "btn btn-primary Back" (click)="back()" routerLinkActive="router-link-active">cancel</button>
+    </div>
+    </div>
+    <div class="donut-graph">
+      <div id="divChart-donut">
+        <canvas style="color:aliceblue;" id="donut"></canvas>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+<!-- <section>
   <div class="Head">
     <h1>Payment Schedule</h1>
   </div>
@@ -65,5 +134,8 @@
 <div id="divChart">
   <canvas id="myChart"></canvas>
 </div>
+<div id="divChart">
+  <canvas id="donut"></canvas>
+</div>
 </section>
-
+ -->

@@ -11,9 +11,11 @@
 .cards{
     justify-content: center;
     align-items: center;
+    
 }
 .first{
     bottom: -50px;
+
 }
 
 section{
@@ -24,17 +26,16 @@ section{
 
 .first:hover{
     top:35px;
-    transition: 1s;
 }
 
 .second:hover{
     top:-20px;
-    transition: 1s;
+   
 }
 
 .third:hover{
     top:-20px;
-    transition: 1s;
+
 }
 @media(max-width:1000px) {
     .container{
