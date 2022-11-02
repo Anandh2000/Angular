@@ -34,6 +34,7 @@ export class PaymentScheduleComponent implements OnInit {
   projectedInterest:any=[]
   total:number=0
   loanAmount:number=0
+  customer:any=[]
   date:any=[]
   v:any=[]
   i:number=1
@@ -49,6 +50,7 @@ export class PaymentScheduleComponent implements OnInit {
       res => {
         console.log(res.loanAmount)
         this.loanAmount=res.loanAmount
+        this.customer=res
         this.schedules = res.paymentSchedules
           Chart.register(...registerables)
           Chart.defaults.color = '#fff';
@@ -151,7 +153,10 @@ export class PaymentScheduleComponent implements OnInit {
           title: {
             display: true,
             color:'white',
-            text: 'Chart.js Line Chart - Cubic interpolation mode'
+            text: 'Payment and Interest Amount',
+            font: {
+              size: 18
+            }
           },
         },
         interaction: {

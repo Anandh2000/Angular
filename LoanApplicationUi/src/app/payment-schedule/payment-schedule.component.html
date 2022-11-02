@@ -1,6 +1,12 @@
 <body>
   <div class="top">
-    <div style="flex: 0.7;" class="customer-info">
+    <div style="flex: 0.5;" class="customer-info">
+      <div>Customer Id:{{customer.customerId}}</div>
+      <div>LoanAmount :{{customer.loanAmount}}</div>
+      <div>Interest :{{customer.interestRate}}</div>
+      <div>StartDate : {{customer.loanStartDate}}</div>
+      <div>MaturityDate:{{customer.maturityDate}}</div>
+      <div>PaymentTerm:{{customer.paymentTerm}}</div>
     </div>
     <div style="flex: 1;" class="line-graph">
       <div id="divChart">
