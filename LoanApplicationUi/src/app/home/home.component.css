@@ -1,13 +1,36 @@
-.container{
-    
-    display: flex;
-    top: 250px;
-    left: 140px;
-    bottom: 50%;
-    justify-content: center;
-    align-items: center;
-    width: calc(100% - 250px);
+.second-Section{
+    text-align: left;
+    color: black;
+    position: relative;
+    z-index: 20;
 }
+.third-Section{
+    text-align: left;
+    color: black;
+    position: relative;
+    z-index: 10;
+}
+img{
+    width:500px;
+    position: absolute;
+    right:10%;
+    top:10%;
+    z-index:0;
+}
+.container{
+    padding: 9em 5em;
+    z-index: 1;
+    position: relative;
+}
+h2{
+    font-size: 5em;
+    margin-bottom: 0;
+}
+p{
+    font-size: 1em;
+}
+
+
 .cards{
     justify-content: center;
     align-items: center;
@@ -59,6 +82,10 @@ section{
 
 }
 
+html {
+    scroll-behavior: smooth;
+    }
+
 
 .card{
     display: flex;
@@ -71,6 +98,18 @@ section{
     background-color: var(--primary-color-light) ;
 }
 
+/* .patho{
+    stroke-dasharray:1176;
+    stroke-dashoffset: 1176;
+    animation: sign 4s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes sign{
+    to {
+        stroke-dashoffset: 0;
+    }
+} */
 
 .card h5,p{
     color: var(--text-color)
@@ -88,8 +127,8 @@ button{
 .first{
     margin-top: -65px;
 }
-.line-container{
-    
+.line-containers{
+    position: relative;
     top:0;
     left:0;
     width: 100%;
@@ -100,5 +139,5 @@ button{
 }
 svg{
     display: inline-block;
-    height: 400px;
+    height: 952px;
 }

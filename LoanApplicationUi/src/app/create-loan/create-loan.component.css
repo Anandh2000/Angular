@@ -21,9 +21,13 @@ button{
     background-color: var(--primary-color);
 }
 
+html {
+    scroll-behavior: smooth;
+    }
+
 .card{
     border:none;
-    margin-top: 50px;
+    margin-top: 100px;
     padding: 40px;
     position: absolute;
     top: 20%;

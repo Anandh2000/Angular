@@ -1,37 +1,32 @@
-
-<section class="second-Section" #secondSection>
+<br><br><br><br>
+<section class="second-Section" id="secondSection" >
   <div class="container-responsive container">
     <div class="card-group cards">
-        <div class="card first">
-          <img class="card-img-top first" src="../../assets/Allura - UI Windows.png" alt="Card image cap">
           <div class="card-body firstBody">
-            <h5 class="card-title">Book Loan</h5>
+            <h2 class="card-title">Book Loan</h2>
             <p class="card-text">Create loans for the customer just by clicking the button</p>
             <button type="button" class="btn btn-primary" [routerLink]="['/create']" routerLinkActive="router-link-active"  >Create</button>
           </div>
-        </div>
-        <div class="card second">
-          <img class="card-img-top second" src="../../assets/Allura - Feedback Session.png" alt="Card image cap">
-          <div class="card-body secondBody">
-            <h5 class="card-title">Loan History</h5> 
-            <p class="card-text">Customer loan details will be displayed here in the table formate</p>
-            <button type="button" class="btn btn-primary" routerLink="/loanDetails" routerLinkActive="router-link-active" >History</button>
-          </div>
-        </div>
-        <div class="card third">
-          <img class="card-img-top exitImg" src="../../assets/Allura - Social Media.png" alt="Card image cap">
-          <div class="card-body thirdBody">
-            <h5 class="card-title">Exit</h5>
-            <p class="card-text">Have a nice day</p>
-            <br><br>
-            <button  type="button" class="btn btn-primary" [routerLink]="['']" >Exit</button>
-          </div>
-        </div>
+            <img class="loanimg" src="../../assets/Humaaans - 1 Character.png" alt="Card image cap">
       </div>
+
 </div>
-<div class="line-container">
-  <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMax meet" fill="none">
-      <path class="paths" d="M375.3363342285156,23.31838607788086C375.4858093261719,50.82212257385254,374.8878936767578,137.51868120829263,376.2331848144531,188.34080505371094C377.57847595214844,239.16292889912924,382.6606953938802,298.9536717732747,383.4080810546875,328.2511291503906C384.1554667154948,357.54858652750653,389.53663126627606,364.2750295003255,380.7174987792969,364.12554931640625C371.8983662923177,363.976069132487,322.1225840250651,334.08070373535156,330.4932861328125,327.354248046875C338.8639882405599,320.62779235839844,422.12257893880206,317.48878479003906,430.94171142578125,323.7668151855469C439.76084391276044,330.0448455810547,391.3303527832031,358.14649454752606,383.4080810546875,365.0224304199219" fill="none" stroke-width="1" pathLength="500" stroke="url(&quot;#SvgjsLinearGradient1000&quot;)" stroke-linecap="round"></path><defs><linearGradient id="SvgjsLinearGradient1000"><stop stop-color="hsl(37, 99%, 67%)" offset="0"></stop><stop stop-color="hsl(316, 73%, 52%)" offset="1"></stop></linearGradient></defs></svg>    
+<div class="line-containers">
+  <svg viewBox="0 0 439 972" preserveAspectRatio="xMidYMax meet" fill="none">
+      <path id="paths" class="paths"  d="M250 0.5V291L153.5 269.5L112.5 336.5C133.833 358 178.1 402.2 184.5 407C192.5 413 256.5 375 269 391C281.5 407 305.5 440 302 480.5C298.5 521 231.5 586.5 220.5 586.5C209.5 586.5 153 525 137.5 528.5C122 532 61.5 472 78.5 577C95.5 682 -141 769.5 137.5 682C416 594.5 463 516.5 428.5 630.5C394 744.5 437.5 819.5 348.5 799C277.3 782.6 178.167 758.833 137.5 749L166 963M166 963L153.5 971C97.5 933 -4.1 867.6 37.5 910C79.1 952.4 176.833 943.333 220.5 933.5L234.5 971L166 963Z" fill="none" stroke-width="1"  stroke="black" stroke-linecap="round"></path><defs><linearGradient id="SvgjsLinearGradient1000"><stop stop-color="hsl(37, 99%, 67%)" offset="0"></stop><stop stop-color="hsl(316, 73%, 52%)" offset="1"></stop></linearGradient></defs></svg>    
+</div>
+</section>
+
+<section class="third-Section" id="thirdSection">
+  <div class="container-responsive container">
+  <div class="card-group cards">
+    <div class="card-body secondbody">
+      <h2 class="card-title">loan History</h2>
+      <p class="card-text">Create loans for the customer just by clicking the button</p>
+      <button type="button" class="btn btn-primary" routerLink="/loanDetails" routerLinkActive="router-link-active" >History</button>
+    </div>
+      <img class="historyimg" src="../../assets/Humaaans - 1 Character.png" alt="Card image cap">
+</div>
 </div>
 </section>
  

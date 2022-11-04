@@ -18,32 +18,49 @@ export class HomeComponent implements OnInit {
   constructor(@Inject(DOCUMENT) private document:Document) { }
 
   ngOnInit(): void {
+    let content:any = document.querySelector('.third-Section')
     let path:any = document.querySelector('.paths')
     let pathLength = path.getTotalLength()
+    console.log(pathLength)
 
-    path.style.strokeDasharray = pathLength + ' ' + pathLength;
+    path.style.strokeDasharray = pathLength;
 
-    path.style.strokeDashoffset = pathLength;
+    path.style.strokeDashoffset = calcDashOffset(window.innerHeight* 0.9,content,pathLength);
+    function calcDashOffset(scrollY:any,element:any,length:any){
+      var scrollPercentage = ((scrollY)-element.offsetTop)/element.offsetHeight;
+      var value = length - (length * scrollPercentage)
+      return value < 0 ? 0 : value > length ? length : value
+    }
 
     window.addEventListener('scroll', () => {
-      let sc:any = document.querySelector('.cards')?.scrollHeight
-        var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop)/(sc);
-        var drawLength = pathLength * scrollPercentage;
-        path.style.strokeDashoffset = pathLength - drawLength;
+        const scrollY = window.scrollY + (window.innerHeight*0.9);
+        path.style.strokeDashoffset = calcDashOffset(scrollY,content,pathLength);
     })
 
-   
-
+    var c:any = this.document.getElementById("paths");
     var t1 = gsap.timeline({
       scrollTrigger:{
-        trigger:this.secondSection.nativeElement,
-       
+        trigger:this.document.querySelector('.second-Section'),
         toggleClass:'active',
         start:'20% center bottom',
-
+        pin:'true',
+        end:'top'
       }
     });
-    t1.from(".cards",{y:200,opacity:0,duration:1.5})
+    t1.from(".loanimg",{x:200,opacity:0,duration:1.5})
+    .from(".firstBody",{x:-200,opacity:0,duration:1.5},"=-1")
+    
+    var t2 = gsap.timeline({
+      scrollTrigger:{
+        trigger:this.document.querySelector('.third-Section'),
+        toggleClass:'active',
+        start:'20% center bottom',
+        pin:'true',
+        end:'top'
+      }
+    });
+    t2.from(".secondbody",{marginLeft:'1000px', opacity:0,duration:1.5})
+    .from(".historyimg",{opacity:0,duration:1.5})
     
 
     // gsap.to(this.secondSection.nativeElement,{
