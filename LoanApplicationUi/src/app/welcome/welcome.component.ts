@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -13,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger)
 export class WelcomeComponent implements OnInit {
   @ViewChild('path',{static:true}) path!: ElementRef<HTMLDivElement>;
 
-  constructor(@Inject(DOCUMENT) private document:Document) { }
+  constructor(@Inject(DOCUMENT) private document:Document,private route:Router) { }
 
   ngOnInit(): void {
     let path:any = document.querySelector('path')
@@ -40,6 +41,10 @@ export class WelcomeComponent implements OnInit {
     // });
     // t1.from("img",{x:200,opacity:0,duration:1.5})
     // .from(".content",{y:300,opacity:0,duration:1})
+  }
+  logout(){
+    sessionStorage.removeItem('token')
+    this.route.navigate(['/login'])
   }
 
 }

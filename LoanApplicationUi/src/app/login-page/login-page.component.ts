@@ -37,7 +37,7 @@ export class LoginPageComponent implements OnInit {
     this.authentication();
   }
   authentication(){
-     this.authService.authenticationService(this.loginForm.value.email,this.loginForm.value.password)
+     this.authService.jwtAuthenticationService(this.loginForm.value.email,this.loginForm.value.password)
      .subscribe(
       data =>{
         console.log(data)
