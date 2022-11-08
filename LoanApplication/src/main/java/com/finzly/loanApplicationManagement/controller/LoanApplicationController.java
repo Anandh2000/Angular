@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.finzly.loanApplicationManagement.entity.AuthenticationBean;
 import com.finzly.loanApplicationManagement.entity.LoanDetails;
 import com.finzly.loanApplicationManagement.entity.PaymentSchedule;
 import com.finzly.loanApplicationManagement.errorHandler.ErrorHandlerService;
@@ -33,6 +34,12 @@ public class LoanApplicationController{
 		logger.trace("created a loan");
 		return storedLoan;
 	}
+	
+	@GetMapping("/basicauth")
+	public AuthenticationBean hello() {
+		return new AuthenticationBean("message");
+	}
+	
 	
 	@GetMapping("/loanDetails")
 	public Object customerDetails(){
