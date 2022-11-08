@@ -30,7 +30,7 @@
 }
 
 .home-img{
-    width: 600px;
+    width: 700px;
 }
 
 .container{
@@ -66,12 +66,16 @@ svg{
 font{
     font-size:2cm;
     color:#223B77;
-   
+    font-family: 'Kalam', cursive;
+    font-weight: 400;
 }
 
 h6{
     font-size:0.5cm;
     margin-top: 15px;
+    font-family: 'Kalam', cursive;
+    font-weight: 500;
+
 }
 
 button{

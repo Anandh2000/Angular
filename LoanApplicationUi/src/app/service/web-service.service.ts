@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { errMessage } from '../create-loan/create-loan.component';
 import { Loan } from '../loan-history/loan-history.component';
@@ -16,6 +16,8 @@ export class WebServiceService {
   }
 
   loanHistory(){ 
+
+
     return this.http.get<Loan[]>("http://localhost:8080/loanDetails");
   }
 
@@ -26,6 +28,7 @@ export class WebServiceService {
   payment(id:number){
     return this.http.get<any>(`http://localhost:8080/customer/payment/${id}`)
   }
+
 
   
 }

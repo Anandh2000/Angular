@@ -20,8 +20,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     let content:any = document.querySelector('.third-Section')
     let path:any = document.querySelector('.paths')
-    let pathLength = path.getTotalLength()
-    console.log(pathLength)
+    let pathLength:any = path.getTotalLength()
 
     path.style.strokeDasharray = pathLength;
 
@@ -34,7 +33,7 @@ export class HomeComponent implements OnInit {
 
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY + (window.innerHeight*0.9);
-        path.style.strokeDashoffset = calcDashOffset(scrollY,content,pathLength);
+       path.style.strokeDashoffset = calcDashOffset(scrollY,content,pathLength);
     })
 
     var c:any = this.document.getElementById("paths");

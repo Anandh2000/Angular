@@ -52,12 +52,7 @@
 
 .secondbody{
     margin-left: 150px;
-
 }
-
-
-
-
 
 .loanimg{
     width: 600px;
@@ -72,6 +67,13 @@
 h2{
     font-size:2cm;
     color:#223B77;
+    font-family: 'Kalam', cursive;
+    font-weight: 400;
+}
+p{
+    font-size:0.5cm;
+    font-family: 'Kalam', cursive;
+    font-weight: 400;
 }
 button{
     width: 100px;
