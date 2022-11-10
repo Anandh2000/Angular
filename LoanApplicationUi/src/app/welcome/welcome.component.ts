@@ -43,6 +43,7 @@ export class WelcomeComponent implements OnInit {
     // .from(".content",{y:300,opacity:0,duration:1})
   }
   logout(){
+    console.log("hiii")
     sessionStorage.removeItem('token')
     this.route.navigate(['/login'])
   }

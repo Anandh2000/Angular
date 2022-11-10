@@ -1,15 +1,16 @@
-<div class="text-center">
-    <h4 class="text-center"> Login form with Validation using Angular Material</h4>
+<div class="login">
+  <div class="text-center">
+    <h4 class="text-center"> Admin Login</h4>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="d-flex-center">
       <div class="example-container">
         <div>
           <mat-form-field>
-            <input matInput placeholder="Email" formControlName="email">
-            <mat-error *ngIf="!loginForm.get('email')?.errors?.required && (loginForm.get('email')?.errors?.pattern)">
-              Please enter a valid email address
+            <input matInput placeholder="Admin Name" formControlName="adminName">
+            <mat-error *ngIf="!loginForm.get('adminName')?.errors?.required && (loginForm.get('adminName')?.errors?.pattern)">
+              Please enter a valid entry
             </mat-error>
-            <mat-error *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) && loginForm.get('email')?.errors?.required">
-              Email is required
+            <mat-error *ngIf="loginForm.get('adminName')?.invalid && (loginForm.get('adminName')?.dirty || loginForm.get('adminName')?.touched) && loginForm.get('adminName')?.errors?.required">
+              Name is required
             </mat-error>
           </mat-form-field>
         </div>
@@ -30,3 +31,4 @@
       </div>
     </form>
   </div>
+</div>

@@ -20,6 +20,7 @@ import{ MatInputModule} from "@angular/material/input";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select'
 import { HttpIntercepterBasicAuthService } from './service/http/http-intercepter-basic-auth.service';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 
@@ -49,6 +50,7 @@ import { HttpIntercepterBasicAuthService } from './service/http/http-intercepter
     BrowserAnimationsModule,
     MatButtonModule,
     MatSelectModule,
+    NgxDatatableModule,
   ],
   providers: [
     {

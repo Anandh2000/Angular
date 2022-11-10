@@ -21,6 +21,22 @@ export class Loan{
   styleUrls: ['./loan-history.component.css']
 })
 export class LoanHistoryComponent implements OnInit {
+  options = {}
+  data:any = [];
+  columns: any = {};
+
+  columnsWithFeatures:any
+  optionsWithFeatures: any
+  dataWithFeatures: any
+
+  title = 'table-tutorial';
+  rows:Loan[]=[]
+
+  navBarShow ={basic:true, pinTab:true, cellTemplate:false, checkbox:false}
+  
+
+
+
   page:number=1;
   count:number=0;
   tableSize:number=10;
@@ -30,12 +46,20 @@ export class LoanHistoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.loanList()
+    this.optionsWithFeatures = {
+      rowClickEvent: true,
+      rowPerPageMenu: [5, 10, 20, 30],
+      rowPerPage : 5
+    }
+    this.navBarShow ={basic:true, pinTab:false, cellTemplate:false, checkbox:false}
+
   }
   loanList(){
     this.service.loanHistory().subscribe(
       (response) => {
          console.log(response)
         this.loans = response
+        this.rows = response
         //let product = response['paymentSchedules'].map(response => )
       }
      )

@@ -16,8 +16,8 @@ export class LoginPageComponent implements OnInit {
     private router:Router,private authService:AuthenticationServiceService
   ) {
     this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email,Validators.pattern(
-        '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,63}$',
+      adminName: new FormControl('', [Validators.required,Validators.pattern(
+        "[a-zA-Z][a-zA-Z ]+",
       ),]),
       password: new FormControl('', [Validators.required,Validators.pattern(
         '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$'
@@ -31,13 +31,13 @@ export class LoginPageComponent implements OnInit {
       return;
     }
 
-    console.log(this.loginForm.value.email)
+    console.log(this.loginForm.value.adminName)
     localStorage.setItem('user',this.loginForm.value)
     //this.router.navigate(['/welcome'])
     this.authentication();
   }
   authentication(){
-     this.authService.jwtAuthenticationService(this.loginForm.value.email,this.loginForm.value.password)
+     this.authService.jwtAuthenticationService(this.loginForm.value.adminName,this.loginForm.value.password)
      .subscribe(
       data =>{
         console.log(data)
@@ -45,7 +45,8 @@ export class LoginPageComponent implements OnInit {
         this.invalidLogin = false
       },
       error =>{
-        console.log(error)
+        console.log(error.error)
+        alert(error.error)
         this.invalidLogin = true
       }
      )

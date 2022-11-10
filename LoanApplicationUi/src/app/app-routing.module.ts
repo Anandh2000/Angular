@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChartsappComponent } from './chartsapp/chartsapp.component';
 import { CreateLoanComponent } from './create-loan/create-loan.component';
 import { ErrorResponseComponent } from './error-response/error-response.component';
 import { HomeComponent } from './home/home.component';
@@ -11,7 +12,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
   {
-    path:'',redirectTo:'login',pathMatch:'full'
+    path:'',redirectTo:'welcome',pathMatch:'full'
   },
   {
     path:'login',component:LoginPageComponent
@@ -30,6 +31,9 @@ const routes: Routes = [
   },
   {
     path:"paymentSchedule/:id",component:PaymentScheduleComponent,canActivate:[RouteGaurdService]
+  },
+  {
+    path:"chart",component:ChartsappComponent
   },
   {
     path:"**",component:ErrorResponseComponent

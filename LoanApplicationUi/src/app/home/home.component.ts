@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -15,7 +16,7 @@ export class HomeComponent implements OnInit {
    @ViewChild('thirdSection', { static: true })
   thirdSection!: ElementRef<HTMLDivElement>;
 
-  constructor(@Inject(DOCUMENT) private document:Document) { }
+  constructor(@Inject(DOCUMENT) private document:Document,private route:Router) { }
 
   ngOnInit(): void {
     let content:any = document.querySelector('.third-Section')
@@ -104,6 +105,10 @@ export class HomeComponent implements OnInit {
       opacity:0,
       duration:2,
     });
+  }
+
+  top(){
+    this.route.navigate(["#firstPage"])
   }
 
  

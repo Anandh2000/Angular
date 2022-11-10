@@ -1,10 +1,10 @@
 <body>
   <div class="Head">
-    <h1>Loan History </h1>
+    <!-- <h1>Loan History </h1> -->
   </div>
   <section>
-    <app-side-menu-bar></app-side-menu-bar>
-    <div class="table-responsive">
+    <!-- <app-side-menu-bar></app-side-menu-bar> -->
+    <!-- <div class="table-responsive">
       <table class="table" >
         <thead class="table-dark">
             <tr>
@@ -49,7 +49,72 @@
         </div>
         <button style="margin-left: 20px;" href="/welcome" class="btn btn-primary"><a href="/welcome#thirdSection" style="color:white ;" >Back</a></button>
       </div>   
+    </div> -->
+
+    <div>
+      <h1>Loan History</h1>
+  </div>
+  <div class="border-top" style="margin-bottom: 1rem !important;">
+  </div>
+  <div class="col-md-12 mb-3" style="margin-top: 10px;">
+    <input _ngcontent-thh-c4="" autocomplete="off" class="form-control input-md ng-untouched ng-pristine ng-valid" name="search" placeholder="Search" style="border-radius: 0px;" type="text" ng-reflect-name="search" ng-reflect-model="" id="search_basic">
+      <ngx-datatable tableClass="table table-striped table-bordered table-hover" [rows]="rows"  [columnMode]="'flex'" [headerHeight]="50" [footerHeight]="50" rowHeight="auto">
+          <ngx-datatable-column name="#" [flexGrow]="0.5">
+              <ng-template let-rowIndex="rowIndex " let-row="row" ngx-datatable-cell-template>
+                  {{(rowIndex + 1)}}
+              </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="customerId" [flexGrow]="2">
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row?.customerId }}
+              </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="loanAmount" [flexGrow]="2">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{ row?.loanAmount | currency:"INR" }}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="interestRate" [flexGrow]="2">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+              {{ row?.interestRate }}
+          </ng-template>
+      </ngx-datatable-column>
+          <ngx-datatable-column name="loanStartDate" [flexGrow]="2">
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{row?.loanStartDate}}
+              </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="maturityDate" [flexGrow]="2">
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{row?.maturityDate}}
+              </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="paymentTerm" [flexGrow]="2">
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{row?.paymentTerm}}
+              </ng-template>
+          </ngx-datatable-column>
+  
+      </ngx-datatable>
+  </div>
+  <div class="pagination">
+    <div >
+      <select class="form-select mb-3" (change)="onTableSizeChange($event)" aria-label="Default select example">
+        <option selected>Table size</option>
+        <option *ngFor="let size of tableSizes"> {{size}}</option>
+      </select>
     </div>
+    <div style="flex: 3;">
+      <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onTableDataChange($event)">
+      <button style="margin-right: 300px;" type="submit" class = "btn btn-primary Back" [routerLink]="['/home']" routerLinkActive="router-link-active">Back</button>
+    </pagination-controls>
+    </div>
+    <button style="margin-left: 20px;" href="/welcome" class="btn btn-primary"><a href="/welcome#thirdSection" style="color:white ;" >Back</a></button>
+  </div>   
+
   </section>
 </body>
 

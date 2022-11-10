@@ -96,3 +96,9 @@ svg{
     display: inline-block;
     height: 952px;
 }
+
+.topIcon{
+    width: 55px;
+    height: 55px;
+    font-size: 55px;
+}
