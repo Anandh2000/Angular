@@ -1,0 +1,155 @@
+body{
+    background-color: #18191a;
+    display: grid;
+    grid-template-rows: 1.7fr 2fr;
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+    padding: 50px;
+    padding-left: 150px;
+}
+
+.customer-info > div{
+    font-family: "Rubik",sans-serif;
+    font-weight: 700;
+    font-size: large;
+    color: white;
+}
+.customer-info{
+    display: flex;
+    flex-direction: column;
+    padding-left: 35px;
+    justify-content: center;
+    align-content:space-around ;
+    row-gap: 10px;
+    border-radius: 10px;
+    background-color:#333;
+}
+
+body > div{
+    height: 100%;
+    background-color: #18191a;
+}
+
+.top,
+.bottom{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    
+}
+
+.donut-graph{
+    display: flex;
+    flex: 0.6;
+    justify-content: center;
+    margin-bottom: 0px;
+    row-gap: 10px;
+    border-radius: 10px;
+    background-color:#333;
+}
+
+*{
+    box-sizing: border-box;
+}
+.line-graph{
+    display: flex;
+    flex: 0.6;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    row-gap: 10px;
+    border-radius: 10px;
+    background-color:#333;
+
+}
+
+.payment-table{
+    display: flex;
+    flex:1;
+    margin-bottom: -150px;
+    
+}
+
+
+
+ 
+
+
+
+button{
+    border: none;
+    border-radius: 0px;
+    background-color: #3366ff;
+}
+button:hover{
+    background-color: var(--sidebar-color);
+    color: #3366FF;
+}
+
+.pagination{
+    display: flex;
+    color: white;
+}
+
+section{
+    height: 100vh;
+    background-color: var(--sidebar-color);
+    text-align: center;
+}
+.Head{
+    position: absolute;
+    top:1%;
+    left: 33%;
+    color: var(--text-color);
+}
+.head-text{
+    color: var(--text-color);
+}
+
+
+
+
+@media(max-width:1000px) {
+    .pagination{
+        width: 300px;
+    }
+}
+
+.popup{
+    width:400px;
+    border-radius: 6px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.3s, top 0.4s;
+    background: var(--sidebar-color);
+    box-shadow: 0px 0px 6px var(--text-color);
+    color: var(--text-color);
+}
+
+img{
+    width: 100px;
+    top :-30px;
+}
+
+.open-popup{
+    visibility: visible;
+    top:50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+
+#divChart{
+    width: 600px;
+    height: 300px;
+}
+#divChart-donut{
+    width: 300px;
+    height: 300px;
+}

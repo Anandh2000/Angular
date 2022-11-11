@@ -1,0 +1,34 @@
+<div class="login">
+  <div class="text-center">
+    <h4 class="text-center"> Admin Login</h4>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="d-flex-center">
+      <div class="example-container">
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Admin Name" formControlName="adminName">
+            <mat-error *ngIf="!loginForm.get('adminName')?.errors?.required && (loginForm.get('adminName')?.errors?.pattern)">
+              Please enter a valid entry
+            </mat-error>
+            <mat-error *ngIf="loginForm.get('adminName')?.invalid && (loginForm.get('adminName')?.dirty || loginForm.get('adminName')?.touched) && loginForm.get('adminName')?.errors?.required">
+              Name is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="mt-top-2">
+          <mat-form-field>
+            <input matInput type="password" placeholder="Password" formControlName="password">    
+            <mat-error *ngIf="!loginForm.get('password')?.errors?.required">
+              Password length must be greater than or equal to 8 and password must contain one or more uppercase , lowercase , numeric and special characters
+            </mat-error>
+            <mat-error *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors?.required">
+              Password is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="mt-top">
+          <button [disabled]="!loginForm.valid" mat-raised-button color="primary" mat-button>Sign In</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

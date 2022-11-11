@@ -1,0 +1,105 @@
+.second-Section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.third-Section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards{
+    display: flex;
+    padding: 60px;
+    align-items: center;
+    height: 90%;
+    width: 95%;
+    border-radius: 10px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+.leftimg,.firstBody.secondbody{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    column-gap: 1px;
+    line-height: 1;
+    margin-left: 100px;
+}
+.rightimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1; 
+    margin-right: 150px;
+}
+
+
+.firstBody{
+    margin-left: 200px;
+
+}
+
+.secondbody{
+    margin-left: 150px;
+}
+
+.loanimg{
+    width: 600px;
+}
+.historyimg{
+    width: 600px;
+    z-index: 10;
+}
+*{
+    box-sizing: border-box;
+}
+
+h2{
+    font-size:2cm;
+    color:#223B77;
+    font-family: 'Kalam', cursive;
+    font-weight: 400;
+}
+p{
+    font-size:0.5cm;
+    font-family: 'Kalam', cursive;
+    font-weight: 400;
+}
+button{
+    width: 100px;
+}
+
+
+
+
+.line-containers{
+    position: relative;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+
+}
+svg{
+    display: inline-block;
+    height: 952px;
+}
+
+.topIcon{
+    width: 55px;
+    height: 55px;
+    font-size: 55px;
+}
