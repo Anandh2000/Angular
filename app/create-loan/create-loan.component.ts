@@ -53,10 +53,16 @@ export class CreateLoanComponent implements OnInit {
   
       },
       err =>{
-        alert(err.error.message || err.error.customerId || "server not connected")
+        alert( "please check the details")
+        if(err.error.message){
+          alert("Customer Name must be unique")
+        }
         console.log(err.error.message)
       })
     
+  }
+  route(){
+    this.router.navigate(["/welcome"])
   }
 
 }

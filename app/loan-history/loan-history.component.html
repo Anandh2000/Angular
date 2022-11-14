@@ -1,10 +1,10 @@
-<body>
+<body class="loanBody">
   <div class="Head">
-    <!-- <h1>Loan History </h1> -->
+    <h1 id="table" style="color: white; ">Loan History </h1>
   </div>
   <section>
     <!-- <app-side-menu-bar></app-side-menu-bar> -->
-    <!-- <div class="table-responsive">
+    <div class="table-responsive" style="flex: 1;" >
       <table class="table" >
         <thead class="table-dark">
             <tr>
@@ -47,11 +47,11 @@
           <button style="margin-right: 300px;" type="submit" class = "btn btn-primary Back" [routerLink]="['/home']" routerLinkActive="router-link-active">Back</button>
         </pagination-controls>
         </div>
-        <button style="margin-left: 20px;" href="/welcome" class="btn btn-primary"><a href="/welcome#thirdSection" style="color:white ;" >Back</a></button>
+        <button style="margin-left: 20px;" class="btn btn-primary"><a href="/welcome#thirdSection" style="color:white ;" >Back</a></button>
       </div>   
-    </div> -->
+    </div>
 
-    <div>
+    <!-- <div>
       <h1>Loan History</h1>
   </div>
   <div class="border-top" style="margin-bottom: 1rem !important;">
@@ -59,7 +59,7 @@
   <div class="col-md-12 mb-3" style="margin-top: 10px;">
     <input _ngcontent-thh-c4="" autocomplete="off" class="form-control input-md ng-untouched ng-pristine ng-valid" name="search" placeholder="Search" style="border-radius: 0px;" type="text" ng-reflect-name="search" ng-reflect-model="" id="search_basic">
       <ngx-datatable tableClass="table table-striped table-bordered table-hover" [rows]="rows"  [columnMode]="'flex'" [headerHeight]="50" [footerHeight]="50" rowHeight="auto">
-          <ngx-datatable-column name="#" [flexGrow]="0.5">
+          <ngx-datatable-column name="#" [flexGrow]="0.5" >
               <ng-template let-rowIndex="rowIndex " let-row="row" ngx-datatable-cell-template>
                   {{(rowIndex + 1)}}
               </ng-template>
@@ -94,6 +94,11 @@
                   {{row?.paymentTerm}}
               </ng-template>
           </ngx-datatable-column>
+          <ngx-datatable-column name="Schedule" [flexGrow]="2">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              <button type="button" (click)="onConfirm(row.customerId)" class="btn btn-success">schedule</button>
+            </ng-template>
+        </ngx-datatable-column>
   
       </ngx-datatable>
   </div>
@@ -113,7 +118,7 @@
     </pagination-controls>
     </div>
     <button style="margin-left: 20px;" href="/welcome" class="btn btn-primary"><a href="/welcome#thirdSection" style="color:white ;" >Back</a></button>
-  </div>   
+  </div>    -->
 
   </section>
 </body>

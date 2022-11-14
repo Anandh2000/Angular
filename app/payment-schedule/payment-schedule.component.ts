@@ -84,8 +84,8 @@ export class PaymentScheduleComponent implements OnInit {
         {
           data: [this.loanAmount,this.total],
           backgroundColor: [
-            'rgb(54, 162, 235)',
-            'rgb(255, 99, 132)',
+            'blue',
+            'violet',
             
           ],
           borderJoinStyle:'round',
@@ -97,6 +97,10 @@ export class PaymentScheduleComponent implements OnInit {
       options: {
         responsive: true,
         color:'white',
+        font:{
+          family:"'Kalam', cursive",
+         
+        },
         plugins: {
           legend: {
             position: 'top',
@@ -106,7 +110,8 @@ export class PaymentScheduleComponent implements OnInit {
             text: 'Payment Details',
             color:'white',
             font: {
-              size: 18
+              size: 18,
+              family:"'Kalam', cursive",
             }
     
           }
@@ -155,7 +160,8 @@ export class PaymentScheduleComponent implements OnInit {
             color:'white',
             text: 'Payment and Interest Amount',
             font: {
-              size: 18
+              size: 18,
+              family:"'Kalam', cursive",
             }
           },
         },

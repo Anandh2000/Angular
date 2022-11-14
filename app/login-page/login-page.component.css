@@ -1,10 +1,13 @@
 .text-center{
     text-align: center;
+    color:#223B77;
+    font-family: 'Kalam', cursive;
+    font-weight: 400;
+    font-size: 1.5em;
 }
 .example-container{
-    height: 50%;
-    width: 20%;
     text-align: left;
+    width: 300px;
 }
 .d-flex-center{
     display: flex;
@@ -22,7 +25,25 @@
 }
 
 .login{
-    margin:200px ;
     justify-content: center;
-   
+        background-color:white;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin-top: 100px;
+        border-radius: 10px;  
+}
+.home-img{
+    width: 700px;
+    margin-left: 100px;
+
+}
+
+.text-section.image-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    column-gap: 1px;
+    line-height: 1;
 }

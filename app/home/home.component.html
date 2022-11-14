@@ -7,7 +7,7 @@
           <div class="card-body firstBody">
             <h2 class="card-title">Book Loan</h2>
             <p class="card-text">Create loans for the customer just by clicking the button</p>
-            <button type="button" class="btn btn-primary" [routerLink]="['/create']" routerLinkActive="router-link-active"  >Create</button>
+            <button type="button" style="background-color: #223B77; border-color: #223B77;"class="btn btn-primary" [routerLink]="['/create']" routerLinkActive="router-link-active"  >Create</button>
           </div>
         </div>
         
@@ -21,7 +21,7 @@
     <div class="card-body secondbody">
       <h2 class="card-title">loan History</h2>
       <p class="card-text">Create loans for the customer just by clicking the button</p>
-      <button type="button" class="btn btn-primary" routerLink="/loanDetails" routerLinkActive="router-link-active" >History</button>
+      <button type="button" style="background-color: #223B77; border-color: #223B77;" class="btn btn-primary"  routerLinkActive="router-link-active" ><a href="/loanDetails#table" style="color:white ;" >History</a></button>
     </div>
     <div class="rightimg">
       <img class="historyimg" src="../../assets/Financial data-bro.png" alt="Card image cap">
@@ -30,8 +30,10 @@
 <!-- <button style="margin-left: 20px;" href="/welcome" class="btn btn-primary"><a href="/welcome#firstPage" style="color:white ;" >top</a></button> -->
 
 </section>
-<section class="space" style="height: 600px; margin-left: 900px; justify-content: center;">
-  <a href="/welcome#firstPage" ><i style="margin-top: 200px;" class='bx bx-up-arrow-circle topIcon'></i></a>
+<section class="space" style="height: 500px; margin-left: 870px; margin-top: 232px; justify-content: center;">
+  <button type="button" style="background-color: white;width: 150px; border-radius: 20px; border-width: 0.19em; border-color: #223B77; " class="btn btn-primary" ><a href="/welcome#firstPage" style="color: #223B77;" >Top</a></button>
+  
+  <!-- <a href="/welcome#firstPage" ><i style="margin-top: 200px;" class='bx bx-up-arrow-circle topIcon'></i></a> -->
 
 </section>
 </section>

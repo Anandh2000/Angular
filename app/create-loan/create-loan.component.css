@@ -31,10 +31,10 @@ html {
     padding: 40px;
     position: absolute;
     top: 20%;
-    left: 50%;
+    left: 30%;
     transform: translate(-50%,-50%);
-    background: var(--primary-color-light);
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+    /* background: var(--primary-color-light);
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.15); */
     color: var(--text-color);
 }
 section{
@@ -48,8 +48,8 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 300px;
-    left:100px;
+    top: 350px;
+    left:200px;
     
 }
 .popup{
@@ -69,14 +69,24 @@ section{
     color: var(--text-color);
 }
 
-img{
-    width: 100px;
-    top :-30px;
-}
 
 .open-popup{
     visibility: visible;
     top:50%;
     transform: translate(-50%,-50%) scale(1);
 }
+.home-img{
+    width: 600px;
+    position: absolute;
+    top:-200px;
 
+}
+
+.text-section.image-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    column-gap: 1px;
+    line-height: 1;
+}

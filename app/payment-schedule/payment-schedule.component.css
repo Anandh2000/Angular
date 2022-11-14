@@ -10,7 +10,6 @@ body{
 }
 
 .customer-info > div{
-    font-family: "Rubik",sans-serif;
     font-weight: 700;
     font-size: large;
     color: white;
@@ -21,7 +20,7 @@ body{
     padding-left: 35px;
     justify-content: center;
     align-content:space-around ;
-    row-gap: 10px;
+    row-gap: 15px;
     border-radius: 10px;
     background-color:#333;
 }
@@ -150,6 +149,7 @@ img{
     height: 300px;
 }
 #divChart-donut{
+    margin-top: 20px;
     width: 300px;
     height: 300px;
 }
